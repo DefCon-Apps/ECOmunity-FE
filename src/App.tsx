@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import GlobalStyle from './styles/GlobalStyle';
 import NavBase from './components/NavBase';
 import Main from './pages/Main';
 import Notice from './pages/Notice';
@@ -14,7 +13,6 @@ import './App.css';
 const App: React.FC = () => {
     return (
         <>
-        <GlobalStyle/>
         <div className="App">
         <NavBase/>
             <Routes>
