@@ -39,6 +39,7 @@ const Nav: React.FC = () => {
 
 
 const GlobalNavStyle = styled.div`
+    font-family: 'Pretendard-Regular';
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
@@ -48,7 +49,6 @@ const GlobalNavStyle = styled.div`
 `;
 
 const NavMenuStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
@@ -56,7 +56,6 @@ const NavMenuStyle = styled.div`
     
     
     p{
-        font-family: 'Pretendard-Bold';
         font-size: 20px;
         margin-left : 100px;
         margin-right: 100px;

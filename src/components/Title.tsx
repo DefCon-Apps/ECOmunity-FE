@@ -26,16 +26,14 @@ const TitleLayoutStyle = styled.div`
 `;/**Flex Container of Title Component */
 
 const TitleMainStyle = styled.p`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
     color: white;
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard-Regular';
     font-size:100px;
     margin: 0;
 `;
 
 const TitleSubStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-    font-family: 'Pretendard-Thin';
+    font-family: 'Pretendard-Regular';
     font-size:30px;
     color: white;
     margin: 0;

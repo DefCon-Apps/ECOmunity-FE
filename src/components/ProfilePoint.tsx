@@ -43,12 +43,12 @@ const ProfilePoint:React.FC = () => {
 }
 
 const ProfileUserNameStyle = styled.p`
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard-Regular';
     font-size : 60px;
 `;
 
 const ProfileUserPointStyle = styled.h1`
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard-Regular';
     font-size : 80px;
     
 `;

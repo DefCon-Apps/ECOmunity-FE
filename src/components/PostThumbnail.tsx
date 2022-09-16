@@ -23,6 +23,7 @@ const PostThumbnail : React.FC<{data: API_POST_LIST_ITEM}> = (props) => {
 };
 
 const PostLinkStyle = styled.div`
+    font-family: 'Pretendard-Regular';
     a{
         text-decoration: none; color: white;
     }
@@ -31,6 +32,7 @@ const PostLinkStyle = styled.div`
     };
 `
 const PostThumbnailStyle = styled.div`
+
     display: flex;
     flex-direction: column;
     margin-bottom : 50px;

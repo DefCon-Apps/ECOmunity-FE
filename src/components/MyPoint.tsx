@@ -11,8 +11,6 @@ const MyPointLayoutStyle = styled.div`
     color : white;
     height: 280px;
     margin-left: 300px;
-
-    
 `;
 
 const MyPointTextLayoutStyle = styled.div`

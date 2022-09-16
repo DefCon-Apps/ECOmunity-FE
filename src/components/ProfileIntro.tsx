@@ -25,7 +25,7 @@ const ProfileIntro : React.FC = () => {
 
 
 const IntroH1Style = styled.p`
-    font-family: 'Pretendard-Black';
+    font-family: 'Pretendard-Regular';
     font-size: 50px;
 `;
 

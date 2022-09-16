@@ -60,6 +60,7 @@ const NoticeGlobalStyle = styled.div`
     margin-top: 40px;
     justify-content: flex-start;
     align-items: flex-start;
+    font-family: 'Pretendard-Regular';
 `;
 /**공지사항 컴포넌트 전체에 대한 스타일 */
 

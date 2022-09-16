@@ -18,7 +18,7 @@ const NoticeTitleStyle = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    font-family: 'Pretendard-Thin';
+    font-family: 'Pretendard-Regular';
     margin-left: 90px;
 
 
@@ -26,13 +26,13 @@ const NoticeTitleStyle = styled.div`
 /**공지사항 컴포넌트 제목에 대한 스타일 */
 
 const NoticePStyle = styled.p`
-    font-family: 'Pretendard-Thin';
+    font-family: 'Pretendard-Regular';
     font-size:50px;
     margin: 0;
 `;
 
 const NoticeSubPStyle = styled.p`
-    font-family: 'Pretendard-Thin';
+    font-family: 'Pretendard-Regular';
     font-size:30px;
     margin: 0;
 `

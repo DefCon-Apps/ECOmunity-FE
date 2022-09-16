@@ -38,8 +38,7 @@ const Login: React.FC = () => {
 }
 
 const LoginContentsStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-    font-family: 'Pretendard-Thin';
+    font-family: 'Pretendard-Regular';
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +49,7 @@ const LoginContentsStyle = styled.div`
 
 
     h1{
-        font-family: 'Pretendard-Bold';
+        font-family: 'Pretendard-Regular';
         font-size: 50pt;
     }
     img{

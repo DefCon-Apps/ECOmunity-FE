@@ -100,15 +100,13 @@ const NoticeViewStyle = styled.div`
 
 
 const TitleStyle = styled.h1`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
     font-family: 'Pretendard-Regular';
     font-size: 30pt;
     
 `;
 
 const WriterAndDateStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-    font-family: 'Pretendard-Thin';
+    font-family: 'Pretendard-Regular';
     font-size: 15pt;
     display: flex;
     flex-direction: row-reverse;

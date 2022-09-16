@@ -13,6 +13,7 @@ const PostThumbImg : React.FC<{src: string}> = (props) => {
 }
 
 const PostThumbImgGlobalStyle = styled.div`
+    font-family: 'Pretendard-Regular';
     width: 450px;
     height: 300px;
 

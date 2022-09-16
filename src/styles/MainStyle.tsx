@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 const MainStyle = styled.div`
-    width: 100px;
-    height: 100px;
-    background-color: black;
+    font-family: 'Pretendard-Ragular';
 `;
 
 export default MainStyle;

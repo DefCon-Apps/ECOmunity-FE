@@ -39,6 +39,7 @@ const PostThumbTxt : React.FC<Props> = (props) => {
 };
 
 const OtherContetnsStyle = styled.div`
+    font-family: 'Pretendard-Regular';
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -46,6 +47,7 @@ const OtherContetnsStyle = styled.div`
 `;
 
 const LikeStyle = styled.div`
+    font-family: 'Pretendard-Regular';
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -62,8 +64,7 @@ const LikeStyle = styled.div`
 
 
 const WriterDateStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard-Regular';
     font-weight: bold;
     font-size: 20px;
     margin-right: 20px;
@@ -75,8 +76,7 @@ const WriterDateStyle = styled.div`
 `;
 
 const CategoryStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard-Regular';
     font-weight: bold;
     font-size: 15pt;
     width: 100px;
@@ -102,8 +102,7 @@ const PostTxtGlobalStyle = styled.div`
 `;
 
 const PostTxtTitleStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard-Regular';
     font-weight: bold;
 
     p{

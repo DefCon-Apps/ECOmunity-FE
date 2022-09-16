@@ -27,16 +27,9 @@ const NoticeTxt : React.FC<Props> = (props) => {
     );
 };
 
-const NoticePreviewStyle = styled.div`
-    width: 90%;
-    height: 70%;
-    margin-left: 23px;
-    
-`;
 
 const WriterDateStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard-Regular';
     font-weight: bold;
     font-size: 20px;
     margin: 0 10px 0 auto;
@@ -48,8 +41,7 @@ const WriterDateStyle = styled.div`
 `;
 
 const CategoryStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard-Regular';  
     font-weight: bold;
     font-size: 15pt;
     width: 100px;
@@ -75,8 +67,7 @@ const NoticeTxtGlobalStyle = styled.div`
 `;
 
 const NoticeTxtTitleStyle = styled.div`
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-    font-family: 'Pretendard-Bold';
+    font-family: 'Pretendard-Regular';
     font-weight: bold;
 
     p{

@@ -30,6 +30,7 @@ const PostLinkStyle = styled.div`
     };
 `
 const NoticeThumbnailStyle = styled.div`
+    font-family: 'Pretendard-Regular';
     display: flex;
     flex-direction: column;
     margin-bottom : 50px;
