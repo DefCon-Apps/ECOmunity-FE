@@ -22,15 +22,14 @@ const MyPointTextLayoutStyle = styled.div`
     justify-content: center;
 
     p{
-        @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-        font-family: 'Pretendard-Thin';
+        font-family: 'Pretendard-Regular';
         font-size: 30px;
     }
 
     h1{
-        @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
-        font-family: 'Pretendard-Bold';
+        font-family: 'Pretendard-Regular';
         font-size: 80px;
+        font-weight: bold;
     }
 `;
 
