@@ -113,6 +113,26 @@ const PostWrite: React.FC<Props> = (props) => {
         return postId;
     }
 
+    async function updateUserPoint(user: User, token: string) {
+        const reqUserInfo = await request.post('/profile/getUserInfo', {
+            USER_UID: user.uid,
+            USER_TOKEN: token,
+        });
+        const updateUserPoint = reqUserInfo.data.RESULT_DATA.USER_POINT + 5;
+
+        return request.post('/profile/updateUserInfo', {
+            USER_UID: user.uid,
+            USER_TOKEN: token,    
+            USER_INFO: {
+                USER_EMAIL: user.email,
+                USER_NAME: user.displayName,
+                USER_PHONE: user.phoneNumber,
+                USER_POINT: updateUserPoint,
+                USER_POSTS: reqUserInfo.data.RESULT_DATA.USER_POSTS,
+            }
+        });
+    }
+
     const onImageChange: React.ChangeEventHandler<HTMLInputElement> = e => {
         const imgFile = e.currentTarget.files![0];
         if (imgFile.size > 1040000) {
@@ -173,9 +193,11 @@ const PostWrite: React.FC<Props> = (props) => {
                 .then(res => {
                     console.log(res);
                     if (res.data.RESULT_CODE == 200) {
-                        window.removeEventListener("beforeunload", onBeforeReload);
-                        window.removeEventListener("popstate", preventGoBack);
-                        window.location.reload();
+                        updateUserPoint(user, token).then(res => {
+                            window.removeEventListener("beforeunload", onBeforeReload);
+                            window.removeEventListener("popstate", preventGoBack);
+                            window.location.reload();
+                        });
                         return;
                     }
                     e.target.disabled = false;
@@ -227,3 +249,4 @@ const PostWrite: React.FC<Props> = (props) => {
     );
 }
 export default PostWrite;
+
