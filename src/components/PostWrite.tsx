@@ -3,6 +3,7 @@ import styled from "styled-components";
 import auth from "../auth";
 import Modal from "./Modal";
 import request from "../util/RequestAPI";
+import { User } from "firebase/auth";
 
 interface Props {
     show: boolean;
@@ -97,6 +98,21 @@ const PostWrite: React.FC<Props> = (props) => {
         window.history.pushState(null, "", window.location.href);
     }
 
+    async function createPostId(user: User, token: string) {
+        let postId = "";
+        const result = await request.post('/board/getPostList', {
+            USER_UID: user.uid,
+            USER_TOKEN: token,
+            POST_IS_NOTICE: false,
+        });
+        const idNum = (Number(result.data.RESULT_DATA.POST_LIST[0].POST_ID.replace(/0/g, "")) + 1).toString();
+        for (let i = 0; i < 5 - (idNum.length); i++) {
+            postId += "0";
+        }
+        postId += idNum;
+        return postId;
+    }
+
     const onImageChange: React.ChangeEventHandler<HTMLInputElement> = e => {
         const imgFile = e.currentTarget.files![0];
         if (imgFile.size > 1040000) {
@@ -139,35 +155,37 @@ const PostWrite: React.FC<Props> = (props) => {
         e.target.innerText = "작성 중";
         const user = auth.currentUser;
         user?.getIdToken().then(token => {
-            request.post('/board/updatePost', {
-                USER_UID: user.uid,
-                USER_TOKEN: token,
-                POST_ID: Math.random().toString(36).substring(2,7),
-                POST_IS_NOTICE: false,
-                POST_DATA: {
-                  POST_AUTHOR: user.displayName,
-                  POST_CONTENT: content,
-                  POST_DATE: new Date().toLocaleDateString(),
-                  POST_IMAGE: image,
-                  POST_RECOMMEND: 0,
-                  POST_TITLE: title
-                }
-            })
-            .then(res => {
-                console.log(res);
-                if (res.data.RESULT_CODE == 200) {
-                    window.removeEventListener("beforeunload", onBeforeReload);
-                    window.removeEventListener("popstate", preventGoBack);
-                    window.location.reload();
-                    return;
-                }
-                e.target.disabled = false;
-                e.target.innerText = "작성"
-                window.alert('게시글을 작성할 수 없습니다!');
-            })
-            .catch(err => {
-                console.log(err);
-                window.alert('게시글을 작성할 수 없습니다!');
+            createPostId(user, token).then(newPostId => {
+                request.post('/board/updatePost', {
+                    USER_UID: user.uid,
+                    USER_TOKEN: token,
+                    POST_ID: newPostId,
+                    POST_IS_NOTICE: false,
+                    POST_DATA: {
+                      POST_AUTHOR: user.displayName,
+                      POST_CONTENT: content,
+                      POST_DATE: new Date().toLocaleDateString(),
+                      POST_IMAGE: image,
+                      POST_RECOMMEND: 0,
+                      POST_TITLE: title
+                    }
+                })
+                .then(res => {
+                    console.log(res);
+                    if (res.data.RESULT_CODE == 200) {
+                        window.removeEventListener("beforeunload", onBeforeReload);
+                        window.removeEventListener("popstate", preventGoBack);
+                        window.location.reload();
+                        return;
+                    }
+                    e.target.disabled = false;
+                    e.target.innerText = "작성"
+                    window.alert('게시글을 작성할 수 없습니다!');
+                })
+                .catch(err => {
+                    console.log(err);
+                    window.alert('게시글을 작성할 수 없습니다!');
+                });
             });
         });
     }
